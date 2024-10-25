@@ -1,4 +1,22 @@
 <div>
+    <style>
+        .btn-orange {
+            background-color: orange; /* Warna latar belakang oranye */
+            color: white; /* Warna teks putih */
+            border: none; /* Hapus border default */
+            padding: 10px 20px; /* Tambahkan padding untuk tombol */
+            border-radius: 5px; /* Tambahkan radius untuk sudut yang lebih halus */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+            cursor: pointer; /* Ubah kursor saat hover */
+        }
+
+        .btn-orange:hover {
+            background-color: darkorange; /* Warna saat hover */
+            color: white; /* Warna teks tetap putih saat hover */
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+    </style>
+
     <form wire:submit.prevent="save" method="post" novalidate>
         @include('partials.alerts')
         <div class="w-100">
@@ -49,7 +67,7 @@
             </div>
 
             <div class="mb-3">
-                <x-form-label id="positions" label='Posisi Karyawaan' />
+                <x-form-label id="positions" label='Posisi Siswa' />
                 <div class="row ms-1">
                     @foreach ($positions as $position)
                     <div class="form-check col-sm-4">
@@ -62,20 +80,19 @@
                     </div>
                     @endforeach
                 </div>
-                <small class="text-muted d-block mt-1">Pilih posisi karyawaan yang akan menggunakan absensi ini.</small>
+                <small class="text-muted d-block mt-1">Pilih posisi siswa yang akan menggunakan absensi ini.</small>
                 <x-form-error key="position_ids" />
-                {{-- tom-select init script ada di create.blade.php attendances --}}
             </div>
 
             <div class="mb-3">
                 <x-form-label id="flexCheckCode" label="Ingin Menggunakan QRCode (default menggunakan tombol)" />
-                <div class=" form-check">
+                <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" wire:model="attendance.code"
                         id="flexCheckCode">
                     <label class="form-check-label" for="flexCheckCode">
                         Menggunakan QRCode
                     </label>
-                    <small class="text-muted d-block mt-1">Jika checkbox tersebut diubah maka kemungkinan kode qrcode
+                    <small class="text-muted d-block mt-1">Jika checkbox tersebut diubah maka kemungkinan kode QR
                         berubah.</small>
                     <x-form-error key="attendance.code" />
                 </div>
@@ -84,7 +101,7 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center mb-5">
-            <button class="btn btn-primary">
+            <button class="btn btn-orange">
                 Simpan
             </button>
         </div>

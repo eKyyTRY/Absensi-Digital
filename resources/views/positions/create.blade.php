@@ -3,7 +3,7 @@
 @section('buttons')
 <div class="btn-toolbar mb-2 mb-md-0">
     <div>
-        <a href="{{ route('positions.index') }}" class="btn btn-sm btn-light">
+        <a href="{{ route('positions.index') }}" class="btn btn-sm btn-orange"> <!-- Ubah kelas menjadi btn-orange -->
             <span data-feather="arrow-left-circle" class="align-text-bottom"></span>
             Kembali
         </a>

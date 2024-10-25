@@ -18,7 +18,7 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center mb-5">
-            <button class="btn btn-primary">
+            <button class="btn btn-orange"> <!-- Menggunakan btn-orange untuk warna oranye -->
                 Simpan
             </button>
         </div>

@@ -1,5 +1,22 @@
 @extends('layouts.home')
 
+@push('style')
+<style>
+    .btn-orange {
+        background-color: orange; /* Warna latar belakang oranye */
+        color: white; /* Warna teks putih */
+        border: none; /* Hapus border default */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Animasi transisi */
+    }
+
+    .btn-orange:hover {
+        background-color: darkorange; /* Warna saat hover */
+        color: white; /* Warna teks tetap putih saat hover */
+        transform: scale(1.05); /* Efek zoom saat hover */
+    }
+</style>
+@endpush
+
 @section('content')
 <div class="container py-5">
     <div class="row">
@@ -27,7 +44,7 @@
         <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-header">
-                    Informasi Karyawan
+                    Informasi Siswa
                 </div>
                 <div class="card-body">
                     <ul class="ps-3">

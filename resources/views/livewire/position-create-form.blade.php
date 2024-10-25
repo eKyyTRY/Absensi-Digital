@@ -25,7 +25,7 @@
         @endforeach
 
         <div class="d-flex justify-content-between align-items-center">
-            <button class="btn btn-primary">
+            <button class="btn btn-orange"> <!-- Mengubah tombol "Simpan" menjadi oranye -->
                 Simpan
             </button>
             <button class="btn btn-light" type="button" wire:click="addPositionInput" wire:loading.attr="disabled">

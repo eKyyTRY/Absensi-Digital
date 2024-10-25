@@ -6,13 +6,13 @@
     </div>
     @else
 
-    {{-- jika tidak menggunakan qrcode (button) dan karyawan saat ini tidak menekan tombol izin --}}
+    {{-- jika tidak menggunakan qrcode (button) dan siswa saat ini tidak menekan tombol izin --}}
     @if (!$attendance->data->is_using_qrcode && !$data['is_there_permission'])
 
     {{-- jika belum absen dan absen masuk sudah dimulai --}}
     @if ($attendance->data->is_start && !$data['is_has_enter_today'])
-    <button class="btn btn-primary px-3 py-2 btn-sm fw-bold d-block w-100 mb-2" wire:click="sendEnterPresence"
-        wire:loading.attr="disabled" wire:target="sendEnterPresence">Masuk</button>
+    <button class="btn btn-orange px-3 py-2 btn-sm fw-bold d-block w-100 mb-2" wire:click="sendEnterPresence"
+        wire:loading.attr="disabled" wire:target="sendEnterPresence">Masuk</button> <!-- Tombol "Masuk" diubah menjadi oranye -->
     <a href="{{ route('home.permission', $attendance->id) }}"
         class="btn btn-info px-3 py-2 btn-sm fw-bold d-block w-100">Izin</a>
     @endif
@@ -23,10 +23,10 @@
     </div>
     @endif
 
-    {{-- jika absen pulang sudah dimulai, dan karyawan sudah absen masuk dan belum absen pulang --}}
+    {{-- jika absen pulang sudah dimulai, dan siswa sudah absen masuk dan belum absen pulang --}}
     @if ($attendance->data->is_end && $data['is_has_enter_today'] && $data['is_not_out_yet'])
-    <button class="btn btn-primary px-3 py-2 btn-sm fw-bold d-block w-100" wire:click="sendOutPresence"
-        wire:loading.attr="disabled" wire:target="sendOutPresence">Pulang</button>
+    <button class="btn btn-orange px-3 py-2 btn-sm fw-bold d-block w-100" wire:click="sendOutPresence"
+        wire:loading.attr="disabled" wire:target="sendOutPresence">Pulang</button> <!-- Tombol "Pulang" diubah menjadi oranye -->
     @endif
 
     {{-- sudah absen masuk dan absen pulang --}}
@@ -46,7 +46,7 @@
 
     @if($data['is_there_permission'] && !$data['is_permission_accepted'])
     <div class="alert alert-info">
-        <small class="fw-bold">Permintaan izin sedang diproses (atau masih belum di terima).</small>
+        <small class="fw-bold">Permintaan izin sedang diproses (atau masih belum diterima).</small>
     </div>
     @endif
 

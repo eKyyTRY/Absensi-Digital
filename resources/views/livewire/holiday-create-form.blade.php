@@ -33,10 +33,10 @@
         @endforeach
 
         <div class="d-flex justify-content-between align-items-center mb-5">
-            <button class="btn btn-primary">
+            <button class="btn btn-orange"> <!-- Menggunakan btn-orange untuk warna oranye -->
                 Simpan
             </button>
-            <button class="btn btn-light" type="button" wire:click="addHolidayInput" wire:loading.attr="disabled">
+            <button class="btn btn-orange" type="button" wire:click="addHolidayInput" wire:loading.attr="disabled"> <!-- Menggunakan btn-orange untuk warna oranye -->
                 Tambah Input
             </button>
         </div>

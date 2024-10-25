@@ -7,19 +7,22 @@
 @section('content')
 
 <div class="w-100">
-
+    <div class="overlay"></div> <!-- Menambahkan overlay -->
     <main class="form-signin w-100 m-auto">
         <form method="POST" action="{{ route('auth.login') }}" id="login-form">
-            <h1 class="h3 mb-3 fw-normal">Silahkan masuk untuk absensi</h1>
+        <div class="text-center mb-4">
+    <img src="/image/logo_orbit.png" alt="Logo" class="img-fluid" style="max-width: 150px;">
+</div>
+
 
             <div class="form-floating">
                 <input type="email" class="form-control" id="floatingInputEmail" name="email"
-                    placeholder="name@example.com">
+                    placeholder="name@example.com" required>
                 <label for="floatingInputEmail">Email address</label>
             </div>
             <div class="form-floating">
                 <input type="password" class="form-control" id="floatingPassword" name="password"
-                    placeholder="Password">
+                    placeholder="Password" required>
                 <label for="floatingPassword">Password</label>
             </div>
 
@@ -31,7 +34,7 @@
             </div>
 
             <button class="w-100 btn btn-primary" type="submit" id="login-form-button">Masuk</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+            <p class="mt-5 mb-3 text-muted">&copy; 2024 ORBIT - Organisasi Basis IT</p>
         </form>
     </main>
 
